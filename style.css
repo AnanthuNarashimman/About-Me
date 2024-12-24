@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Inconsolata:wght@200..900&family=Michroma&family=Nunito+Sans:ital,opsz,wdth,wght,YTLC@0,6..12,75..125,200..1000,440..540;1,6..12,75..125,200..1000,440..540&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Press+Start+2P&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Share+Tech&family=Share+Tech+Mono&family=VT323&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+    width:5px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #3040D3;
+    border-radius: 10px;
+}
+
+.navbar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 1;
+}
+
+.navbar .name {
+    font-family: 'Orbitron';
+    margin-left: 10px;
+    width: 30%;
+}
+
+.navbar .nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    width: 70%;
+    font-family: 'Inconsolata';
+    font-size: 18px;
+}
+
+.navbar .nav-items h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.navbar .nav-items h3 {
+    height: 30px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.navbar .nav-items h3:hover {
+    color: white;
+    background-color: #3040D3;
+}
+
+.navbar .contact button{
+    width: 100px;
+    height: 40px;
+    margin-right: 10px; 
+    background-color: #3040D3;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-family: 'Inconsolata';
+    font-size: 17px;
+    cursor: pointer;
+    transition: .2s ease;
+} 
+
+.navbar .contact button:hover {
+    background-color: white;
+    color: #3040D3;
+    border: 3px solid #3040D3;
+    font-weight: 800;
+}
+
+hr {
+    position: fixed;
+    top: 70px;
+    width: 100%;
+    border: 1px solid #666;
+    z-index: 1;
+}
+
+.alertbox {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #E9ECED;
+    width: 500px;
+    height: auto;
+    padding: 30px;
+    border-radius: 20px;
+    border: 5px solid #666;
+    font-family: 'VT323';
+    font-size: 25px;
+    text-align: center;
+    color: #3040D3;
+}
+
+.alertbox p {
+    margin-top: 5px;
+}
+
+.alertbox .cbtn  {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    cursor: pointer;
+    color: red;
+}
+
+.alertbox .cbtn:hover {
+    transform: scale(1.2);
+}
+
+.alertbox .fbtn {
+    margin-left: 10px;
+}
+
+.alertbox button {
+    font-family: 'VT323';
+    font-size: 25px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 3px solid #3040D3;
+    color: #3040D3;
+    display: flex;
+    cursor: pointer;
+}
+
+.alertbox button:hover {
+    background: #3040D3;
+    color: white;
+}
+
+.typewriter {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    font-family: 'VT323';
+    color: white;
+    font-size: 3rem;
+    background: linear-gradient(45deg, #3040D3, #1A2A7D);
+}
+
+.typewriter h1 {
+    margin-top: 10%;
+    text-align: center;
+    width: fit-content;
+    border-right: 2px solid white;
+    animation: blink 0.5s step-end infinite;
+}
+
+.typewriter p {
+    text-align: center;
+    border-right: 2px solid white;
+    animation: blink 0.5s step-end infinite;
+    width: fit-content;
+} 
+
+.typewriter button {
+    font-size: 20px;
+    width: 100px;
+    height: 50px;
+    border-radius: 20px;
+    background: #3040D3;
+    border: 5px solid white;
+    cursor: pointer;
+    user-select: none;
+    display: none;
+}
+
+.typewriter a button {
+    color: white;
+}
+
+.typewriter button:hover {
+    background: white;
+    color: #3040D3;
+    border: 5px solid #3040D3;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.coreinfohead {
+    font-family: 'VT323';
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 150px;
+    color: #3040D3;
+    scroll-margin-top: 150px;
+}
+
+.coreinfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    font-family: 'VT323';
+    background: linear-gradient(45deg, #3040D3, #6A0DAD);
+    padding: 20px;
+    color: white;
+    border-radius: 20px;
+    margin : 70px 20px;
+}
+
+.coreinfo h3 {
+    font-size: 40px;
+}
+
+.coreinfo p {
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.coreinfo p::selection {
+    background: #666;
+}
+
+.coreinfo h3::selection {
+    background: #666;
+}
+
+.profilecard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 80%;
+    width: 25%;
+    background: white;
+    border-radius: 15px;
+    color: #3040D3;
+}
+
+.contentarea {
+    width: 75%;
+}
+
+.profilecard .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: #3040D3;
+    margin: 20px;
+}
+
+.profilecard .image img {
+    height: 200px;
+    width: auto;
+    padding: 15px;
+    filter: drop-shadow(0 0 5px #80C4E9);
+    object-fit: cover;
+}
+
+.profilecard h1 {
+    font-size: 40px;
+}
+
+.profilecard h3 {
+    margin-bottom: 5px;
+    font-size: 30px;
+}
+
+.aspecshead {
+    font-family: 'VT323';
+    text-align: center;
+    font-size: 3.5rem;
+    margin-top: 100px;
+    color: #3040D3;
+}
+
+
+.academicspecs {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 80px;
+    padding: 20px 0px;
+}
+
+.academicspecs .iconholder {
+    width: 150px;
+    height: 150px;
+    background: #3040D3;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'VT323';
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.academicspecs .iconholder:active {
+    background: none;
+}
+
+.academicspecs .iconholder:hover {
+    transform: translate(-2px, -4px);
+    box-shadow: 10px 10px 10px gray;
+}
+
+.academicspecs .iconholder h3 {
+    padding-bottom: 15px;
+}
+
+.academicspecs .iconholder img {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+}
+
+.icons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.academicspecs .educontentarea {
+    width: 90%;
+    height: 580px;
+    background: linear-gradient(45deg, #3040D3, #6A0DAD);
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -30px;
+}
+
+.desc {
+    display: flex;
+    height: 100%;
+    width: 300%;
+    align-items: flex-start;
+}
+
+.content {
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.academicspecs .educontentarea h2 {
+    font-family: 'VT323';
+    font-size: 60px;
+    color: white;
+    text-align: center;
+}
+
+.academicspecs .educontentarea h5 {
+    font-family: 'VT323';
+    font-size: 40px;
+    color: white;
+}
+
+.academicspecs .educontentarea p {
+    font-family: 'VT323';
+    font-size: 35px;
+    color: white;
+}
+
+.general h2 {
+    margin-bottom: 60px;
+}
+
+.school h5 {
+    float: left;
+    margin-right: 30px;
+    width: 50%;
+}
+
+.school h2 {
+    margin-bottom: 60px;
+}
+
+.school p {
+    margin-bottom: 20px;
+    float: left;
+    width: 60%;
+}
+
+.school a {
+    font-family: 'Michroma';
+    color: #E9ECED;
+    font-size: 16px;
+}
+
+.school a i {
+    margin-right: 10px;
+}
+
+.college p {
+    margin-bottom: 20px;
+    float: left;
+    width: 60%;
+}
+
+.college a {
+    font-family: 'Michroma';
+    color: #E9ECED;
+    font-size: 16px;
+}
+
+.college a i {
+    margin-right: 10px;
+}
+
+.college h5 {
+    float: left;
+    margin-right: 30px;
+    width: 50%;
+}
+
+.college h2 {
+    margin-bottom: 60px;
+}
+
+.pos {
+    transform: translateX(-33.33%);
+    transition: .5s ease;
+}
+
+.activeicon {
+    color: #3040D3 !important;
+    border: 5px solid #3040D3 !important;
+    background: white !important;
+}
+
+
