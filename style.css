@@ -15,6 +15,8 @@ body {
     min-height: 100vh;
     background-color: #FFFFFF;
     overflow: hidden;
+    overflow-x: hidden;
+    margin-bottom: 20px;
 }
 
 body::-webkit-scrollbar {
@@ -35,7 +37,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     top: 0;
     background: white;
-    z-index: 1;
+    z-index: 150;
 }
 
 .navbar .name {
@@ -59,17 +61,22 @@ body::-webkit-scrollbar-thumb {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-}
-
-.navbar .nav-items h3 {
     height: 30px;
     padding: 5px;
     border-radius: 15px;
 }
 
+.navbar .nav-items a {
+    text-decoration: none;
+    color: black;
+}
+
 .navbar .nav-items h3:hover {
-    color: white;
     background-color: #3040D3;
+}
+
+.navbar .nav-items h3:hover a {
+    color: white;
 }
 
 .navbar .contact button{
@@ -93,6 +100,12 @@ body::-webkit-scrollbar-thumb {
     font-weight: 800;
 }
 
+.contactactive {
+    background: white !important;
+    color: #3040D3 !important;
+    border: 3px solid #3040D3 !important;
+}
+
 hr {
     position: fixed;
     top: 70px;
@@ -102,7 +115,7 @@ hr {
 }
 
 .alertbox {
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
@@ -221,7 +234,7 @@ hr {
     font-family: 'VT323';
     text-align: center;
     font-size: 3.5rem;
-    margin-top: 150px;
+    margin-top: 120px;
     color: #3040D3;
     scroll-margin-top: 150px;
 }
@@ -307,6 +320,7 @@ hr {
     font-size: 3.5rem;
     margin-top: 100px;
     color: #3040D3;
+    scroll-margin-top: 120px;
 }
 
 
@@ -471,4 +485,675 @@ hr {
     background: white !important;
 }
 
+/* styles for technical skills */
 
+.ssmathead {
+    font-family: 'VT323';
+    text-align: center;
+    font-size: 3.5rem;
+    color: #3040D3;
+    margin-top: 100px;
+    scroll-margin-top: 120px;
+}
+
+.carousel {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    font-family: 'VT323';
+    margin-top: 80px;
+}
+
+.carousel .list .item {
+    position: absolute;
+    inset: 0 0 0 0;
+}
+
+.carousel .list .item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carousel .list .item .content {
+    position: absolute;
+    top: 10%;
+    width: 1440px;
+    max-width: 80%;
+    left: 45%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    text-shadow: 0px 5px 10px #000;
+}
+
+.carousel .list .item .content h1 {
+    font-size: 50px;
+}
+
+.carousel .list .item .content .description,
+.carousel .list .item .content .topic,
+.carousel .list .item .content .practical-experience {
+    font-weight: bold;
+    /* line-height: 1.3em; */
+}
+
+/* styles for topic */
+
+.carousel .list .item .content .topic {
+    width: 100%;
+    font-size: 100px;
+    margin-top: 10px;
+}
+
+.carousel .list .item.web .content .topic {
+    color: #f47679;
+}
+
+.carousel .list .item.js .content .topic {
+    color: #ece5c6;
+}
+
+.carousel .list .item.python .content .topic {
+    color: #107caf;
+}
+
+.carousel .list .item.db .content .topic {
+    color: #dfdad9;
+}
+
+/* styles for li tag */
+
+.carousel .list .item .content li {
+    font-size: 22px;
+    width: 80%;
+    margin-top: 20px;
+}
+
+.carousel .list .item.web .content  li {
+    color: #00000082;
+}
+
+.carousel .list .item.python .content  li {
+    color: #212d5f;
+}
+
+/* styles for h1 tag */
+
+.carousel .list .item.js h1 {
+    color: #212d5f;
+}
+
+.carousel .list .item.db h1 {
+    color: #212d5f;
+}
+
+.carousel .list .item .content .progress {
+    height: 8px;
+    width: 500px;
+    border-radius: 4px;
+    background: #666;
+    margin-top: 30px;
+    position: relative;
+}
+
+.carousel .list .item .content .progress h2 {
+    position: absolute;
+    right: -30px;
+    top: 10px;
+    color: blue;
+    font-size: 35px;
+}
+
+.carousel .list .item .content .progress .progress-bar {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 255, 0.762);
+}
+
+/* styles for progressbars*/
+
+.carousel .list .item.web .content .progress .progress-bar {
+    width: 90%;
+}
+
+.carousel .list .item.js .content .progress .progress-bar {
+    width: 70%;
+}
+
+.carousel .list .item.python .content .progress .progress-bar {
+    width: 55%;
+}
+
+.carousel .list .item.db .content .progress .progress-bar {
+    width: 50%;
+}
+
+
+.thumbnail {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: max-content;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item {
+    height: 220px;
+    width: 150px;
+    flex-shrink: 0;
+    position: relative;
+    filter: drop-shadow(0px 5px 10px #000);
+}
+
+.thumbnail .item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    left: 10px;
+    right: 10px;
+    border-radius: 20px;
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+}
+
+.thumbnail .item .content .title {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.arrows {
+    position: absolute;
+    top: 85%;
+    right: 52%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    z-index: 100;
+}
+
+.arrows button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6666664e;
+    font-family: monospace;
+    color: #eee;
+    font-weight: bold;
+    font-size: large;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
+}
+
+.arrows button:hover {
+    background-color: #eee;
+    color: #555;
+}
+
+.carousel .list .item:nth-child(1) {
+    z-index: 1;
+}
+
+.carousel .list .item:nth-child(1) .topic,
+.carousel .list .item:nth-child(1) .progress,
+.carousel .list .item:nth-child(1) .description,
+.carousel .list .item:nth-child(1) .practical-experience {
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+
+@keyframes showContent {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+
+.carousel .list .item:nth-child(1) .progress {
+    animation-delay: 1.2s;
+}
+
+.carousel .list .item:nth-child(1) .description {
+    animation-delay: 1.4s;
+}
+
+.carousel .list .item:nth-child(1) .practical-experience {
+    animation-delay: 1.6s;
+}
+
+.carousel.next .list .item:nth-child(1) img {
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showImage 0.5s Linear 1 forwards;
+}
+
+@keyframes showImage {
+    to {
+        width: 100%;
+        height: 100%;
+        bottom: 0;
+        left: 0;
+        border-radius: 0;
+    }
+}
+
+.carousel.next .thumbnail .item:nth-last-child(1) {
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+
+@keyframes showThumbnail {
+    to {
+        width: 150px;
+    }
+}
+
+.carousel.next .thumbnail {
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;
+}
+
+@keyframes transformThumbnail {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.carousel.prev .list .item:nth-child(2) {
+    z-index: 2;
+}
+
+.carousel.prev .list .item:nth-child(2) img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage 0.5s linear 1 forwards;
+}
+
+@keyframes outImage {
+    to {
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+
+.carousel.prev .thumbnail .item:nth-child(1) {
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+
+.carousel.prev .list .item:nth-child(2) .topic,
+.carousel.prev .list .item:nth-child(2) .progress,
+.carousel.prev .list .item:nth-child(2) .description,
+.carousel.prev .list .item:nth-child(2) .practical-experience {
+    animation: contentOut 1.5s linear 1 forwards;
+}
+
+@keyframes contentOut {
+    to {
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+    
+}
+
+.carousel.next .arrows button,
+.carousel.prev .arrows button {
+    pointer-events: none;
+}
+
+/* .time {
+    position: absolute;
+    height: 5px;
+    background: #f1683a;
+    width: 0;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+
+.carousel.next .time,
+.carousel.prev .time {
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+
+@keyframes  timeRunning {
+    to {
+        width: 0;
+    }
+} */
+
+/* styles for interest zone */
+
+.intzonehead {
+    font-family: 'VT323';
+    text-align: center;
+    font-size: 3.5rem;
+    color: #3040D3;
+    margin-top: 100px;
+    scroll-margin-top: 120px;
+}
+
+.interest-zone {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    background: linear-gradient(45deg, #3040D3, #6A0DAD);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    height: auto; 
+    font-family: 'VT323';
+    padding: 50px;
+    color: white;
+}
+
+.interest-zone .izitem {
+    width: 45%; 
+    margin: 10px; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.interest-zone .izitem img {
+    width: 50%;
+    display: block;
+    height: auto; 
+    border-radius: 25px;
+    border: 5px solid white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.interest-zone .izitem h1 {
+    font-size: 40px;
+}
+
+.interest-zone .izitem h3 {
+    width: 40%;
+    position: absolute;
+    top: 40%;
+    font-size: 30px;
+    color: white;
+    text-shadow: 0px 5px 10px #000;
+    color: white;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: .3s;
+    /* display: none; */
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.izdes {
+    opacity: 0;
+}
+
+/* styles for projecthub */
+
+.prohubhead {
+    font-family: 'VT323';
+    text-align: center;
+    font-size: 3.5rem;
+    color: #3040D3;
+    margin-top: 100px;
+    scroll-margin-top: 120px;
+}
+
+.prohub {
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    font-family: 'VT323';
+}
+
+.prohub .hubitem {
+    width: 70%;
+    background: #E9ECEF;
+    padding: 40px;
+    border-radius: 25px;
+    filter: drop-shadow(5px 10px 15px gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.prohub .hubitem .hubcontent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prohub .hubitem .hubcontent span {
+    font-weight: bold;
+    display: inline-block;
+    margin: 10px 0px;
+}
+
+.prohub .hubitem .hubcontent p {
+    font-size: 25px;
+}
+
+.prohub .hubitem .hubcontent a {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.prohub .hubitem img {
+    width: 50%;
+    height: auto;
+    border-radius: 15px;
+    filter: drop-shadow(0px 5px 10px gray);
+}
+
+/* styles for contactcard */
+
+.contactCard {
+    height: 95%;
+    width: 60%;
+    background: #E9ECEF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border-radius: 25px;
+    transition: .7s ease-out;
+    position: fixed;
+    top: 20px;
+    right: 150px;
+    z-index: 200;
+    filter: drop-shadow(5px 10px 15px #000);
+    font-family: 'VT323';
+    border: 5px solid #3040D3;
+    transform: translateX(2000px);
+}
+
+.active {
+    transform: translateX(0);
+}
+
+.contactCard .profimg {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #3040D3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #3040D3
+}
+
+.contactCard .profimg h1 {
+    font-family: 'Orbitron';
+    color: white;
+}
+
+.contactCard .geninfo {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contactCard .geninfo h1 {
+    font-family: 'Orbitron';
+}
+
+.contactCard .geninfo p {
+    color: #666;
+    font-size: 25px;
+}
+
+.contactCard h3 {
+    margin-top: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.contactCard .contactinfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5px;
+}
+
+.contactCard .contactinfo .cinfoitem {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #666;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.contactCard .contactinfo .gmail {
+    background: white;
+    border: 4px solid #BB001B;
+}
+
+.contactCard .contactinfo .lin {
+    background: white;
+    border: 4px solid #107caf;
+}
+
+.contactCard .contactinfo .git {
+    background: white;
+    border: 4px solid #7ce38b;
+}
+
+.contactCard .contactinfo .cinfoitem .contactcontent {
+    width: 80%;
+}
+
+.contactCard .contactinfo .cinfoitem .contactcontent h3 {
+    margin-top: 0px;
+    text-align: left;
+}
+
+.contactCard .contactinfo .cinfoitem .contactcontent p {
+    font-size: 20px;
+}
+
+.contactCard .contactinfo .cinfoitem .contactcontent a {
+    font-size: 18px;
+}
+
+.contactCard .contactinfo .conimg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50% ;
+}
+
+.contactCard .contactinfo .cinfoitem img {
+    width: 50px;
+    height: 50px;
+}
+
+.contactCard button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #3040D3;
+    cursor: pointer;
+    transition: .3s ease;
+    border: 4px solid #3040D3;
+}
+
+.contactCard button:hover {
+    background: white;
+}
+
+.contactCard button:hover i {
+    color: #3040D3;
+}
+
+.contactCard button i {
+    font-size: 20px;
+    color: white;
+}
+
+
+
+
+@media screen and (max-width: 678px) {
+    .carousel .list .item .content{
+        padding-right: 0;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 30px;
+    }
+}
