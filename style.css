@@ -40,6 +40,10 @@ body::-webkit-scrollbar-thumb {
     z-index: 150;
 }
 
+.navbar .hambtn {
+    display: none;
+}
+
 .navbar .name {
     font-family: 'Orbitron';
     margin-left: 10px;
@@ -53,7 +57,7 @@ body::-webkit-scrollbar-thumb {
     gap: 45px;
     width: 70%;
     font-family: 'Inconsolata';
-    font-size: 18px;
+    font-size: 1em;
 }
 
 .navbar .nav-items h3 {
@@ -69,6 +73,10 @@ body::-webkit-scrollbar-thumb {
 .navbar .nav-items a {
     text-decoration: none;
     color: black;
+}
+
+.navbar .nav-items .hamcontactbtn {
+    display: none;
 }
 
 .navbar .nav-items h3:hover {
@@ -250,6 +258,10 @@ hr {
     color: white;
     border-radius: 20px;
     margin : 70px 20px;
+}
+
+.mobcoreinfo {
+    display: none;
 }
 
 .coreinfo h3 {
@@ -525,7 +537,7 @@ hr {
     transform: translateX(-50%);
     padding-right: 30%;
     box-sizing: border-box;
-    text-shadow: 0px 5px 10px #000;
+    text-shadow: 0px 5px 10px #000000ab;
 }
 
 .carousel .list .item .content h1 {
@@ -911,7 +923,7 @@ hr {
 .interest-zone .izitem h3 {
     width: 40%;
     position: absolute;
-    top: 40%;
+    top: 20%;
     font-size: 30px;
     color: white;
     text-shadow: 0px 5px 10px #000;
@@ -1146,11 +1158,217 @@ hr {
 }
 
 
+/* responsive styles */
 
 
 @media screen and (max-width: 678px) {
+
+    .navbar {
+        height: 50px;
+    }
+
+    .navbar .name {
+        font-size: 16px;
+        width: 70%;
+    }
+
+    .navbar .nav-items {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        position: absolute;
+        top: 50px;
+        right: 8%;
+        background:  linear-gradient(45deg, #3040D3, #6A0DAD);
+        padding: 20px;
+        transform: translateX(500px);    
+        transition: .4s ease;
+        filter: drop-shadow(0px 5px 5px #000);
+    }
+
+    
+    .hamactive {
+        transform: translateX(0) !important;
+    }
+
+
+    .navbar .contact {
+        display: none;
+    }
+
+    .navbar .nav-items .hamcontactbtn {
+        display: block;
+        width: 95px;
+        height: 30px;
+        border-radius: 15px;
+        border: 3px solid white;
+        background: #3040D3;
+        color: white;
+        font-family: 'VT323';
+        font-size: 25px;
+    }
+
+    .navbar .hambtn {
+        display: block;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        margin-right: 10px;
+        border-radius: 50%;
+        transition: .3s ease;
+    }
+
+    .hambtnactive {
+        background: #3040D3 !important;
+        filter: drop-shadow(0px 5px 3px #000) !important;
+    }
+
+    .navbar .hambtn span{
+        height: 3px;
+        width: 30%;
+        background: #000;
+        border-radius: 1.5px;
+    }
+
+    .navbar .nav-items a {
+        width: 100%;
+        color: white;
+    }
+
+    hr {
+        top: 50px;
+    }
+
+    .alertbox {
+        width: 90%;
+    }
+
+    .typewriter {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .typewriter h1 {
+        width: 100%;
+    }
+
+    .coreinfo {
+        display: none;
+    }
+
+    .coreinfohead {
+        margin-top: 50px;
+    }
+
+    .mobcoreinfo {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-family: 'VT323';
+    }
+
+    .mobcoreinfo .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 65%;
+        height: auto;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background: #3040D3;
+        filter: drop-shadow(5px 10px 15px #000);
+
+    }
+
+    .mobcoreinfo .image img {
+        width: 70%;
+        transform: translateY(-10%);
+        filter: drop-shadow(0 0 5px #80C4E9);
+        object-fit: cover;
+    }
+
+    .mobcoreinfo h3 {
+        margin-top: 20px;
+        font-size: 45px;
+        color: #1A2A7D;
+    }
+
+    .mobcoreinfo p {
+        color: #1A2A7D;
+        font-size: 25px;
+        text-align: center;
+        padding: 10px;
+        text-shadow: 0px 5px 10px #000;
+
+    }
+
+    .academicspecs {
+        padding: 0px;
+    }
+
+    .academicspecs .iconholder {
+        width: 100px;
+        height: 100px;
+    }
+
+    .academicspecs .iconholder img {
+        width: 80px;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .academicspecs .iconholder h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .academicspecs .educontentarea {
+        width: 90%;
+        height: auto;
+        padding: 0px;
+    }
+
+    .academicspecs .educontentarea h2 {
+        font-size: 45px;
+    }
+    
+    .academicspecs .educontentarea .content h5 {
+        width: 100%;
+    }
+
+    .academicspecs .educontentarea p {
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .academicspecs .educontentarea h3 {
+        width: 100%;
+    }
+
+    .academicspecs .educontentarea .content {
+        width: 100%;
+        padding: 3px;
+    }
+
+    .academicspecs .educontentarea .general {
+        text-align: center;
+    }
+
+    .carousel .list .item .content .topic {
+        font-size: 50px;
+    }
+
     .carousel .list .item .content{
         padding-right: 0;
+        top: 1%;
     }
 
     .carousel .list .item .content .title {
