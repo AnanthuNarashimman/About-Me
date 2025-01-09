@@ -1,5 +1,7 @@
 console.log("JavaScript linked successfully!");
 
+const width = window.innerWidth;
+
 //code for checking whether the page reoloads or loads to display alert box and set body overflow accordingly
 
 window.onload = function() {
@@ -8,6 +10,12 @@ window.onload = function() {
     if(pageloaded) {
         alertbox.style.display = 'none';
         document.body.style.overflow = 'auto';
+        if(width<=768) {
+            const general = document.querySelector('.general');
+            const mobgeneral = document.querySelector('.mobgeneral');
+            general.style.display = 'none';
+            mobgeneral.style.display = 'block';
+        }
         typewriter();
     } else {
         alertbox.style.display = 'flex';
@@ -54,6 +62,7 @@ i=0;
 index=0;
 
 
+
 function typewriter() {
     const nameArea = document.querySelector('#typewriter-text');
     const descriptionArea = document.querySelector('.typewriter-description');
@@ -71,6 +80,8 @@ function typewriter() {
             setTimeout(typewriter,75);  
         }, 75); 
     }
+
+    
 
     else {
         desccursor.style.borderColor = 'white';
@@ -245,9 +256,126 @@ window.addEventListener('click', function (e) {
     const contactcard = document.querySelector('.contactCard');
     const contactbtn = document.querySelector('.contactbtn');
 
+    const hambtn = document.querySelector('.hambtn');
+    const navitem = document.querySelector('.nav-items');
+    const hamspan = document.querySelectorAll('.navbar .hambtn span');
+
+
     if (!e.target.closest('.contactCard') &&!e.target.classList.contains('contactbtn')
     ) {
         contactcard.classList.remove('active');
         contactbtn.classList.remove('contactactive');
     }
+
+    if (
+        !e.target.closest('.nav-items') && 
+        !e.target.closest('.hambtn')
+    ) {
+        navitem.classList.remove('hamactive');
+        hamspan.forEach((span) => {
+            span.classList.remove('hambtnactive');
+        });
+    }
 });
+
+
+// code for hamburger buttn menu
+
+const hambtn = document.querySelector('.hambtn');
+const navitem = document.querySelector('.nav-items');
+const hamspan = document.querySelectorAll('.navbar .hambtn span');
+
+hambtn.addEventListener('click', function() {
+    navitem.classList.toggle('hamactive');
+    hamspan.forEach((span) => {
+        span.classList.toggle('hambtnactive');
+    })
+    
+})
+
+// code for mobile version of general content
+
+document.querySelector('.academicspecs .educontentarea .mobgeneral button').addEventListener('click', function () {
+    const dots = document.getElementById('dots');
+    const moreText = document.getElementById('remcontent');
+    const content = document.querySelector('.educontentarea');
+    const btn = this;
+
+    if (dots.style.display === 'none') {
+        dots.style.display = 'inline';
+        moreText.style.display = 'none';
+        btn.textContent = 'Show More';
+        content.style.height = '510px';
+    } else {
+        dots.style.display = 'none';
+        moreText.style.display = 'inline';
+        btn.textContent = 'Show Less';
+        content.style.height = 'auto';
+    }
+});
+
+// code for mobile version of technical skills
+
+const leftbtn = document.querySelector('.leftbtn');
+const rightbtn = document.querySelector('.rightbtn');
+let curslide = 1;
+let translatevalue;
+
+rightbtn.addEventListener('click', function() {
+
+
+    switch(curslide) {
+        case 1:
+            translatevalue = 25;
+            curslide++;
+            break;
+        case 2:
+            translatevalue = 50;
+            curslide++;
+            break;
+        case 3:
+            translatevalue = 75;
+            curslide++;
+            break;
+        case 4:
+            translatevalue = 0;
+            curslide = 1;
+            break;
+        }
+
+    
+
+
+    const slider = document.querySelector('.slider');
+    slider.style.transform = `translateX(-${translatevalue}%)`;
+})
+
+leftbtn.addEventListener('click', function() {
+
+
+    switch(curslide) {
+        case 1:
+            translatevalue = 75;
+            curslide=4;
+            break;
+        case 2:
+            translatevalue = 0;
+            curslide--;
+            break;
+        case 3:
+            translatevalue = 25;
+            curslide--;
+            break;
+        case 4:
+            translatevalue = 50;
+            curslide--;
+            break;
+        }
+
+    
+
+
+    const slider = document.querySelector('.slider');
+    slider.style.transform = `translateX(-${translatevalue}%)`;
+})
+

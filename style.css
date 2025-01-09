@@ -346,6 +346,10 @@ hr {
     padding: 20px 0px;
 }
 
+.academicspecs .educontentarea .mobgeneral button {
+    display: none;
+}
+
 .academicspecs .iconholder {
     width: 150px;
     height: 150px;
@@ -397,6 +401,10 @@ hr {
     position: relative;
     overflow: hidden;
     margin-top: -30px;
+}
+
+.academicspecs .educontentarea .mobgeneral {
+    display: none;
 }
 
 .desc {
@@ -499,6 +507,10 @@ hr {
 
 /* styles for technical skills */
 
+.mobcarousel {
+    display: none;
+}
+
 .ssmathead {
     font-family: 'VT323';
     text-align: center;
@@ -523,7 +535,7 @@ hr {
 }
 
 .carousel .list .item img {
-    object-fit: none;
+    object-fit: cover;
     height: 100%;
     width: 100%;
 }
@@ -1004,6 +1016,14 @@ hr {
 
 /* styles for contactcard */
 
+.mobContacthead {
+    display: none;
+}
+
+.mobContactpage {
+    display: none;
+}
+
 .contactCard {
     height: 95%;
     width: 60%;
@@ -1146,6 +1166,10 @@ hr {
 
 @media screen and (max-width: 678px) {
 
+    body {
+        margin-bottom: 0px;
+    }
+
     .navbar {
         height: 50px;
     }
@@ -1159,11 +1183,13 @@ hr {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 60%;
+        width: 70%;
         position: absolute;
         top: 50px;
-        right: 8%;
+        right: 0;
         background:  linear-gradient(45deg, #3040D3, #6A0DAD);
+        background: rgba(255, 255, 255,0.3);
+        backdrop-filter: blur(10px);
         padding: 20px;
         transform: translateX(500px);    
         transition: .4s ease;
@@ -1201,7 +1227,7 @@ hr {
         justify-content: center;
         align-items: center;
         gap: 5px;
-        margin-right: 10px;
+        margin-left: 10px;
         border-radius: 50%;
         transition: .3s ease;
     }
@@ -1256,6 +1282,8 @@ hr {
         align-items: center;
         gap: 20px;
         font-family: 'VT323';
+        background: #3040D3;
+        padding: 50px 0px;
     }
 
     .mobcoreinfo .image {
@@ -1265,8 +1293,9 @@ hr {
         width: 65%;
         height: auto;
         aspect-ratio: 1/1;
+        border: 5px solid #80C4E9;
         border-radius: 50%;
-        background: #3040D3;
+        background: white;
         filter: drop-shadow(5px 10px 15px #000);
 
     }
@@ -1281,11 +1310,11 @@ hr {
     .mobcoreinfo h3 {
         margin-top: 20px;
         font-size: 45px;
-        color: #1A2A7D;
+        color: white;
     }
 
     .mobcoreinfo p {
-        color: #1A2A7D;
+        color: white;
         font-size: 25px;
         text-align: center;
         padding: 10px;
@@ -1314,16 +1343,46 @@ hr {
     }
 
     .academicspecs .educontentarea {
+        margin-top: -40px;
         width: 90%;
-        height: auto;
-        padding: 0px;
+        height: 510px;
+        padding: 5px;
+        overflow: hidden;
+    }
+
+    .academicspecs .educontentarea .desc {
+        gap: 5px;
+    }
+    .academicspecs .educontentarea .mobgeneral p {
+        margin-top: 50px;
+    }
+
+    .academicspecs .educontentarea .mobgeneral button {
+        display: block;
+        font-family: 'Nunito sans';
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+        background: white;
+        color: #3040D3;
+        font-weight: bold;
+        filter: drop-shadow(5px 10px 10px #00000093);
+    }
+
+    .academicspecs .educontentarea .mobgeneral #remcontent {
+        display: none;
     }
 
     .academicspecs .educontentarea h2 {
         font-size: 45px;
+        margin-bottom: 25px;
     }
     
     .academicspecs .educontentarea .content h5 {
+        font-size: 35px;
         width: 100%;
     }
 
@@ -1345,16 +1404,216 @@ hr {
         text-align: center;
     }
 
-    .carousel .list .item .content .topic {
-        font-size: 50px;
+    .carousel {
+        display: none;
     }
 
-    .carousel .list .item .content{
-        padding-right: 0;
-        top: 1%;
+    .mobcarousel {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 
-    .carousel .list .item .content .title {
-        font-size: 30px;
+    .mobskillmatrix {
+        display: block;
+        width: 95%;
+        height: 90vh;
+        overflow: hidden;
+        font-family: 'VT323';
+        position: relative;
     }
+    
+    .mobskillmatrix .slider {
+        width: 400%;
+        height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: translateX(0%);
+        transition: .7s ease;
+        gap: 1%;
+    }
+    
+    .slideitem {
+        background: teal;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        width: 24%;
+        border-radius: 20px;
+    }
+    
+    .slideitem h1 {
+        margin-top: 20px;
+        font-size: 35px;
+    }
+    
+    .slideitem h3 {
+        margin: 10px 0px;
+        font-size: 28px;
+    }
+    
+    .slideitem p {
+        width: 100%;
+        text-align: center;
+        font-size: 20px;
+    }
+    
+    .slideitem .imgarea {
+        background: skyblue;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        border-bottom-right-radius: 30%;
+        border-bottom-left-radius: 30%;
+    }
+    
+    .slideitem .imgarea img {
+        width: 60%;
+        height: auto;
+        border: 3px solid black;
+        border-radius: 25px;
+    }
+    
+    .mobskillmatrix button {
+        position: absolute;
+        top: 43%;
+        /* transform: translateY(-50%); */
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        background: #E9ECEF;
+        font-size: 18px;
+        border: none;
+    }
+    
+    .mobskillmatrix .leftbtn {
+        left: 20px;
+    }
+    
+    .mobskillmatrix .rightbtn {
+        right: 20px;
+    }
+
+    .intzonehead {
+        margin-top: 50px;
+    }
+
+    .interest-zone .izitem {
+        width: 100%;
+    }
+
+    .interest-zone .izitem img {
+        width: 80%;
+    }
+
+    .interest-zone .izitem h3 {
+        font-size: 20px;
+        top: 10%;
+    }
+    
+    .prohub .hubitem {
+        width: 90%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .prohub .hubitem img {
+        width: 100%;
+    }
+
+    .contactCard {
+        display: none;
+    }
+
+    .mobContacthead {
+        display: block;
+        font-family: 'VT323';
+        color: #3040D3;
+        text-align: center;
+        margin-top: 50px;
+        font-size: 1.7rem;
+        scroll-margin-top: 30px;
+    }
+
+    .mobContactpage {
+        background: linear-gradient(45deg, #3040D3, #6A0DAD);
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-family: 'VT323';
+        padding: 30px 5px;
+        color: white;
+    }
+
+    .mobContactpage .name {
+        font-size: 25px;
+    }
+
+    .mobContactpage h3 {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    .mobContactpage .contactlinks {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .mobContactpage .contactlinks .con {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        border-radius: 15px;
+        background: white;
+        padding: 5px;
+    }
+
+    .mobContactpage .contactlinks .img {
+    width: 30%;
+    height: 30%;
+    }
+
+    .mobContactpage .contactlinks .des {
+        width: 60%;
+        color: #3040D3;
+    }
+
+    .mobContactpage .contactlinks .des p {
+        font-size: 18px;
+        color: black;
+    }
+
+    .mobContactpage .contactlinks .des h4 {
+        font-size: 18px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .mobContactpage .contactlinks .des a {
+        font-size: 20px;
+    }
+
+    .mobContactpage .contactlinks .img img {
+        width: 50px;
+        height: 50px;
+    }
+
 }
