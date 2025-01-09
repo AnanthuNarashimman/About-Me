@@ -1401,7 +1401,11 @@ hr {
     }
 
     .academicspecs .educontentarea .general {
-        text-align: center;
+        display: none;
+    }
+
+    .academicspecs .educontentarea .mobgeneral {
+        display: block;
     }
 
     .carousel {
