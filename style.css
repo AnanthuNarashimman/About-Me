@@ -1295,7 +1295,7 @@ hr {
         border: 5px solid #80C4E9;
         border-radius: 50%;
         background: white;
-        filter: drop-shadow(5px 10px 15px #000);
+        overflow: hidden;
 
     }
 
