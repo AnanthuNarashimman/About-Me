@@ -305,15 +305,14 @@ hr {
     width: 70%;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    background: #3040D3;
+    background: #fff;
     margin: 20px;
 }
 
 .profilecard .image img {
-    height: 200px;
+    height: 330px;
     width: auto;
     padding: 15px;
-    filter: drop-shadow(0 0 5px #80C4E9);
     object-fit: cover;
 }
 
